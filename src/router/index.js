@@ -9,16 +9,25 @@ import test from './test'
 
 export default new Router({
   mode: 'history',
-  scrollBehavior: () => ({ y: 0 }),
-  routes: [
-    {
-      path: '/',
-      component: layout,
-      children:[
-        { path: '', component: index },
-        { path: 'index', component: index },
-        test
-      ]
-    }
-  ]
+  scrollBehavior: () => ({
+    y: 0
+  }),
+  routes: [{
+    path: '/',
+    component: layout,
+    children: [{
+        path: '',
+        component: index
+      },
+      {
+        path: 'index',
+        component: index
+      },
+      {
+        path: 'driective',
+        component: resolve => require(['../views/directives/index'], resolve)
+      },
+      test
+    ]
+  }]
 })

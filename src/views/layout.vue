@@ -1,23 +1,24 @@
 <template>
-  <div class="layout">
-    <header class="g-hd">
-      <router-link to="/">Home</router-link>
-      <router-link to="/test/tab">tab</router-link>
-      <router-link to="/test/qqFriends">qqFriends</router-link>
-      <router-link to="/test/qqFriends2">qqFriends2</router-link>
-    </header>
-    <div class="g-container">
-      <router-view></router-view>
+    <div class="layout">
+        <header class="g-hd">
+            <router-link to="/">Home</router-link>
+            <router-link to="/test/tab">tab</router-link>
+            <router-link to="/test/qqFriends">qqFriends</router-link>
+            <router-link to="/test/qqFriends2">qqFriends2</router-link>
+            <router-link to="/driective">driective</router-link>
+        </header>
+        <div class="g-container">
+            <router-view></router-view>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
 
-  export default {
+export default {
     name: 'layout',
-    data() {
-      return {}
+    data () {
+        return {}
     },
     created: function () {
     },
@@ -25,26 +26,25 @@
     },
     methods: {
     }
-  }
+}
 
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .g-hd {
+.g-hd {
     height: 70px;
     background: #324057;
     min-width: 875px;
-  }
-  .g-hd a{
-    color:#fff;
-  }
-  .logo {
+}
+.g-hd a {
+    color: #fff;
+}
+.logo {
     height: 60px;
-  }
+}
 
-  .login {
+.login {
     line-height: 40px;
-  }
-
+}
 </style>
