@@ -12,6 +12,7 @@
         <div v-demo3="{name:'张三',age:12}"></div>
 
         <div v-permission-click>button</div>
+
         <div v-loading="loading"></div>
         <div @click="showLoading">change loading status</div>
     </div>
