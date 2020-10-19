@@ -1,33 +1,41 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import layout from '../views/layout'
+import Vue from "vue";
+import Router from "vue-router";
+import layout from "../views/layout";
 
-Vue.use(Router)
+Vue.use(Router);
 
-const index = resolve => require(['../views/index/'], resolve)
-import test from './test'
+const index = (resolve) => require(["../views/index/"], resolve);
+import test from "./test";
 
 export default new Router({
-  mode: 'history',
+  mode: "history",
   scrollBehavior: () => ({
-    y: 0
+    y: 0,
   }),
-  routes: [{
-    path: '/',
-    component: layout,
-    children: [{
-        path: '',
-        component: index
-      },
-      {
-        path: 'index',
-        component: index
-      },
-      {
-        path: 'driective',
-        component: resolve => require(['../views/directives/index'], resolve)
-      },
-      test
-    ]
-  }]
-})
+  routes: [
+    {
+      path: "/",
+      component: layout,
+      children: [
+        {
+          path: "",
+          component: index,
+        },
+        {
+          path: "index",
+          component: index,
+        },
+        {
+          path: "driective",
+          component: (resolve) =>
+            require(["../views/directives/index"], resolve),
+        },
+        test,
+        {
+          path: "imgLazy",
+          component: (resolve) => require(["../views/imgLazy/index"], resolve),
+        },
+      ],
+    },
+  ],
+});

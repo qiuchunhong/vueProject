@@ -6,6 +6,7 @@
             <router-link to="/test/qqFriends">qqFriends</router-link>
             <router-link to="/test/qqFriends2">qqFriends2</router-link>
             <router-link to="/driective">driective</router-link>
+            <router-link to="/imgLazy">vue-图片懒加载</router-link>
         </header>
         <div class="g-container">
             <router-view></router-view>
