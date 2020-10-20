@@ -1,41 +1,28 @@
 import Vue from "vue";
-import Router from "vue-router";
-import layout from "../views/layout";
+import VueRouter from "vue-router";
+Vue.use(VueRouter);
 
-Vue.use(Router);
-
-const index = (resolve) => require(["../views/index/"], resolve);
-import test from "./test";
-
-export default new Router({
+let routeOptions = []
+let files = require.context(".", false, /\.js$/);
+files.keys().forEach(key=>{
+  if(key == './index.js') return ;
+  routeOptions = routeOptions.concat(files(key).default)
+})
+const routes = routeOptions.map(route=>{
+  if(!route.component){
+    route = {
+      ...route,
+      component:()=>import(`@/views/${route.filePath}`),
+    }
+  }
+  return route
+})
+console.log(routes,'.routes')
+const router = new VueRouter({
   mode: "history",
-  scrollBehavior: () => ({
-    y: 0,
-  }),
-  routes: [
-    {
-      path: "/",
-      component: layout,
-      children: [
-        {
-          path: "",
-          component: index,
-        },
-        {
-          path: "index",
-          component: index,
-        },
-        {
-          path: "driective",
-          component: (resolve) =>
-            require(["../views/directives/index"], resolve),
-        },
-        test,
-        {
-          path: "imgLazy",
-          component: (resolve) => require(["../views/imgLazy/index"], resolve),
-        },
-      ],
-    },
-  ],
-});
+  routes,
+  scrollBehavior(){
+    return{x:0,y:0}
+  }
+})
+export default router

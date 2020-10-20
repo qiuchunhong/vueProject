@@ -1,14 +1,26 @@
-const test = resolve => require(['../views/test'], resolve)
-const tab = resolve => require(['../views/test/tab'], resolve)
-const qqFriends = resolve => require(['../views/test/qqFriends'], resolve)
-const qqFriends2 = resolve => require(['../views/test/qqFriend2'], resolve)
-export default {
-    path: 'test/',
-    component: test,
-    children: [
-        { path: '', component: test },
-        { path: '/test/tab', component: tab },
-        { path: '/test/qqFriends', component: qqFriends },
-        { path: '/test/qqFriends2', component: qqFriends2 }
-    ]
-  }
+
+export default [
+    {
+        path: '/test/tab',
+        name:'tab',
+        filePath:'test/tab',
+        meta:{
+            aa:'ab'
+        }
+    },
+    {
+        path: '/test/qqFriends',
+        name:'qqFriends',
+        filePath:'test/qqFriends'
+    },
+    {
+        path: "/imgLazy",
+        name:'imgLazy',
+        filePath:'imgLazy/index'
+    },
+    {
+        path: '/directives',
+        name:'directives',
+        filePath:'directives/index'
+    },
+]

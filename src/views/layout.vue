@@ -1,11 +1,9 @@
 <template>
     <div class="layout">
         <header class="g-hd">
-            <router-link to="/">Home</router-link>
             <router-link to="/test/tab">tab</router-link>
             <router-link to="/test/qqFriends">qqFriends</router-link>
-            <router-link to="/test/qqFriends2">qqFriends2</router-link>
-            <router-link to="/driective">driective</router-link>
+            <router-link to="/directives">driective</router-link>
             <router-link to="/imgLazy">vue-图片懒加载</router-link>
         </header>
         <div class="g-container">
