@@ -7,6 +7,7 @@
       <router-link to="/imgLazy">vue-图片懒加载</router-link>
       <router-link to="/mixins">vue-mixins</router-link>
       <router-link to="/mixinsExtends">vue-mixins-extends</router-link>
+      <router-link to="/render">render </router-link>
     </header>
     <div class="g-container">
       <router-view></router-view>

@@ -32,4 +32,9 @@ export default [
     name: "mixinsExtends",
     filePath: "mixinsExtends/mixinsExtends",
   },
+  {
+    path: "/render",
+    name: "render",
+    filePath: "render/index",
+  },
 ];
